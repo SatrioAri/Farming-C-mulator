@@ -181,10 +181,10 @@ int cropsData() {
 				sortalphabetdata(FILENAME);
 				break;
 			}else if(a == 2){
-				sortstatusdata(FILENAME);
+				sortstatusdataobtained(FILENAME);
 				break;
 			}else if(a == 3){
-				sortstatusdataobtained(FILENAME);
+				sortstatusdata(FILENAME);
 				break;
 			}else if(a == 0){
 				printf("Returning to Database Menu...\n");
