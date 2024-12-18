@@ -6,7 +6,7 @@ Index,Name,Rarity,Status
 5,Cauliflower,Common,Not
 6,Lentils,Common,Not
 7,Cassava,Common,Not
-8,SweetPotato,Common,Not
+8,SweetPotato,Common,Obtained
 9,GreenOnion,Common,Not
 10,MustardGreens,Common,Not
 11,Carrot,Common,Not
@@ -30,13 +30,13 @@ Index,Name,Rarity,Status
 29,PassionFruit,Uncommon,Not
 30,Strawberry,Rare,Not
 31,Kiwi,Rare,Not
-32,Cherry,Rare,Not
+32,Cherry,Rare,Obtained
 33,Watermelon,Rare,Not
 34,Asparagus,Rare,Not
-35,Zucchini,Rare,Not
+35,Zucchini,Rare,Obtained
 36,Shallot,Rare,Not
 37,Garlic,Rare,Not
-38,Banana,Rare,Not
+38,Banana,Rare,Obtained
 39,Mango,Rare,Not
 40,Orange,Rare,Not
 41,Apple,Epic,Not

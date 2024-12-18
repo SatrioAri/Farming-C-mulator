@@ -11,7 +11,7 @@
 #include "Animasi/gantihari.c"
 #include "Animasi/gameover.c"
 #include "Animasi/animasinyiram.c"
-
+#include "Animasi/animasiawal.c"
 
 void shop_menu(int *coins, const char *filename, const char *inventory);
 void plantCrop(const char *plotFile, const char *inventoryFile,int *moves);
@@ -140,9 +140,17 @@ int main() {
        	scanf("%c", &yn);
    		}
 	} while (strlen(username) > 20 || yn == 'n' || yn == 'N');
+	
+	system("cls");
+	intro();
+	
+	system("cls");
+	gotoxy(50,7);
+	printf("Good luck \033[0;36m%s\033[0m", username);
+	Sleep(3000);
 	system("cls");
 	suntomoonStart();
-  	int season_days = SEASON_DAYS;
+  	int season_days = 2;
     while (season_days > 0) {
 		
     	plotstatuschanger(PLOT);
