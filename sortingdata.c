@@ -53,6 +53,7 @@ void sortalphabetdata(const char *fileName) {
     for (int i = 0; i < count; i++) {
         printf("%-5d|%-20s|%-10s|%-10s|\n", crop[i].index, crop[i].name, crop[i].rarity, crop[i].status);
     }
+    printf("\n");
 }
 
 void quicksortstatus(Crop arr[], int left, int right) {
@@ -106,6 +107,7 @@ void sortstatusdata(const char *fileName) {
     {
     	printf("%-5d|%-20s|%-10s|%-10s|\n", crop[i].index, crop[i].name, crop[i].rarity, crop[i].status);
 	}
+	printf("\n");
 }
 
 void quicksortstatusobtained(Crop arr[], int left, int right) {
@@ -159,18 +161,20 @@ void sortstatusdataobtained(const char *fileName) {
     {
     	printf("%-5d|%-20s|%-10s|%-10s|\n", crop[i].index, crop[i].name, crop[i].rarity, crop[i].status);
 	}
+	printf("\n");
 }
 
-int main() {
+int cropsData() {
 	while(1){
 		while(1){
 			int a;
-			
-			printf("1. Sort by alphabet\n");
-			printf("2. Sort by Not Obtained\n");
-			printf("3. Sort by Obtained\n");
-			printf("0. Exit\n");
-			printf("Choice: ");
+			printf("=== CROPS MENU ===\n");
+			printf("1. Sort by Alphabet\n");
+			printf("2. Sort by Obtained\n");
+			printf("3. Sort by Not Obtained\n");
+			printf("0. Back to Database Menu\n");
+			printf("------------------\n\n");
+			printf("Enter input: ");
 			scanf(" %d", &a);
 			system("cls");
 			if(a == 1){
@@ -183,18 +187,16 @@ int main() {
 				sortstatusdataobtained(FILENAME);
 				break;
 			}else if(a == 0){
+				printf("Returning to Database Menu...\n");
 				return 0;
 			}else{
-				printf("Invalid input!\n");
+				printf("Invalid input! Please try again.\n");
 			}
 			
 		}
 		
 	}
 	
-
-	
-   
     return 0;
 }
 

@@ -2,6 +2,8 @@
 #include "randomizer.c"
 #include "function.c"
 #include "display.c"
+#include "sortingdata.c"
+#include "highscore.c"
 
 #include "Animasi/gotoxy.c"
 #include "Animasi/Animasinanam.c"
@@ -23,22 +25,22 @@ int main() {
     int cointtoday = coins;
 	inventoryclear(INVENTORY);
 	plotclear(PLOT);
-    printf("| Farming C-mulator |\n\n");
     char username[1000];
 	char yn;
 	
 	char startingInput[100];
-	int startMenu;
+	int startMenu = -1;
 	
 	char databaseInput[100];
-	int databaseMenu;
+	int databaseMenu = -1;
 	
     while (1) {
         do {
+        	printf("| Farming C-mulator |\n\n");
             printf("=== STARTING MENU ===\n");
             printf("1. Play\n");
             printf("2. Database\n");
-            printf("3. Exit\n");
+            printf("0. Exit\n");
             printf("---------------------\n\n");
             printf("Enter input: ");
             
@@ -46,10 +48,10 @@ int main() {
             startMenu = atoi(startingInput);
             
             system("cls");
-            if (startMenu < 1 || startMenu > 3) {
+            if (startMenu < 0 || startMenu > 2) {
                 printf("Invalid input! Please enter a valid input!\n\n");
             }
-        } while (startMenu < 1 || startMenu > 3);
+        } while (startMenu < 0 || startMenu > 2);
 
         switch (startMenu) {
             case 1:
@@ -59,12 +61,16 @@ int main() {
                 goto game;
 
             case 2:
+                printf("Loading data...\n");
+                Sleep(3000);
+                system("cls");
+
                 while (1) {
                     do {
                         printf("=== DATABASE MENU ===\n");
                         printf("1. High Score\n");
                         printf("2. Crops\n");
-                        printf("3. Back to Main Menu\n");
+                        printf("0. Back to Starting Menu\n");
                         printf("---------------------\n\n");
                         printf("Enter input: ");
                         
@@ -72,29 +78,42 @@ int main() {
                         databaseMenu = atoi(databaseInput);
                         
                         system("cls");
-                        if (databaseMenu < 1 || databaseMenu > 3) {
+                        if (databaseMenu < 0 || databaseMenu > 2) {
                             printf("Invalid input! Please enter a valid input!\n\n");
                         }
-                    } while (databaseMenu < 1 || databaseMenu > 3);
+                    } while (databaseMenu < 0 || databaseMenu > 2);
                     
                     switch (databaseMenu) {
                         case 1:
-                            printf("High Score\n");
+                            printf("Loading highscores...\n");
+                            Sleep(3000);
+                            system("cls");
+                            highscoreOptionsMenu();
                             Sleep(2000);
                             system("cls");
                             break;
                         case 2:
-                            printf("Crops\n");
+                            printf("Loading crops...\n");
+                            Sleep(3000);
+                            system("cls");
+                            cropsData();
                             Sleep(2000);
                             system("cls");
                             break;
-                        case 3:
+                        case 0:
+                            printf("Returning to Starting Menu...\n");
+                            Sleep(3000);
                             system("cls");
+                            break;
+                    }
+                    
+                    if (databaseMenu == 0) {
+                        break;
                     }
                 }
                 break;
-
-            case 3:
+                
+            case 0:
                 printf("Exiting...\n");
                 Sleep(2000);
                 return 0;
