@@ -184,3 +184,42 @@ int highscoreOptionsMenu() {
     return 0;
 }
 
+void InputHighScore(char name[20], int highscorE, const char* highscoreFile){
+	highscore highscoreData[MAX_RECORDS];
+    int count = 0;
+    char line[MAX_LINE_LENGTH];
+    FILE *file = fopen(highscoreFile, "r");
+
+    if (file == NULL) {
+        perror("Error opening file!");
+        Sleep(3000);
+        return;
+    }
+    fgets(line, sizeof(line), file);
+
+    while (fgets(line, sizeof(line), file)) {
+        sscanf(line, "%49[^,],%d", highscoreData[count].name, &highscoreData[count].hs);
+        count++;
+    }
+    fclose(file);
+    
+    strcpy(highscoreData[count].name,name);
+	highscoreData[count].hs = highscorE; 
+    
+    file = fopen(highscoreFile, "w");
+        if (file == NULL) {
+            perror("Error opening file for writing!");
+            Sleep(3000);
+            return;
+        }
+	
+    fprintf(file, "Name,Score\n");
+    for (int i = 0; i < count+1; i++) {
+    
+        fprintf(file, "%s,%d\n", 
+                highscoreData[i].name, highscoreData[i].hs);
+        
+    }
+    fclose(file);
+}
+

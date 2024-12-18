@@ -21,7 +21,7 @@ void harvestcrop(const char *plotFile, int *coins, int *moves);
 
 
 int main() {
-    int coins = 100;
+    int coins = STARTING_COINS;
     int cointtoday = coins;
 	inventoryclear(INVENTORY);
 	plotclear(PLOT);
@@ -150,7 +150,7 @@ int main() {
 	Sleep(3000);
 	system("cls");
 	suntomoonStart();
-  	int season_days = 2;
+  	int season_days = SEASON_DAYS;
     while (season_days > 0) {
 		
     	plotstatuschanger(PLOT);
@@ -273,9 +273,12 @@ int main() {
     system("cls");
 	printf("=== Season Over ===\n");
     printf("Total coins earned: \033[0;33m%d\033[0m\n", coins);
+    InputHighScore(username, coins, HIGHSCORE);
+    printf("\n\n==========NEW HIGHSCORE===============\n");
+    displaySortedByScoreDescending(HIGHSCORE);
     printf("-------------------\n");
     Sleep(7000);
-
+	
 
     return 0;
 }

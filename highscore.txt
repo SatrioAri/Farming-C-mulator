@@ -3,3 +3,4 @@ Andreas,1000
 Bambang,200
 Cak,300
 Satrio,6969
+y,100

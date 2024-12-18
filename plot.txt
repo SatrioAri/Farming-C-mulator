@@ -1,6 +1,6 @@
 Num,Status,CropName,CropRarity,WaterNeeded,TimeToHarvest
 1,NotPlanted,None,None,-1,-1
-2,NotPlanted,None,None,-1,-1
+2,Planted,Soursop,Uncommon,3,3
 3,NotPlanted,None,None,-1,-1
 4,NotPlanted,None,None,-1,-1
 5,NotPlanted,None,None,-1,-1
