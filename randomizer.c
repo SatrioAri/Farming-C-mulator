@@ -162,20 +162,20 @@ void sellrandomizer(int sellcost, int **COINS, int *p){
 	srand(time(NULL));
 	int b = random(1,1000);
 	if(b<40){
-		printf("\nThis Crop is contaminated\n");
+		printf("\nThis Crop is contaminated!\n");
 		sellcost = sellcost/2;
 		**COINS += sellcost;
 	}else if(b>920){
-		printf("\nGod Damn Best crop I have seen in years\n");
+		printf("\nGod Damn Best crop I have seen in years!\n");
 		sellcost = sellcost*2;
 		**COINS += sellcost;
 	}else if(b>800){
-		printf("\nBring me more of this goodie\n");
+		printf("\nBring me more of this goodie!\n");
 		sellcost = sellcost/2*3;
 		**COINS += sellcost;
 	}else if(b>540){
 		sellcost = sellcost/5*5;
-		printf("\nNice crop you got there\n"); 
+		printf("\nNice crop you got there!\n"); 
 		**COINS += sellcost;
 	}else{
 		**COINS += sellcost;
