@@ -60,7 +60,7 @@ int epicbox() {
 
 void tipsrandomizer(){
 	srand(time(NULL));
-	int tips = random(1,6);
+	int tips = random(1,7);
 	printf("\n\n");
 	printf("Tip: ");
 
@@ -76,6 +76,8 @@ void tipsrandomizer(){
 		printf("Remember, it's not gambling if it's the only thing you can spend money on.");
 	}else if(tips == 6){
 		printf("Binus @Malang? Mboiss!");
+	}else if(tips == 7){
+		printf("Bambang Cak Telo :)");
 	}
 	printf("\n\n");
 }
